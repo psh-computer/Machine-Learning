@@ -1,4 +1,3 @@
-# Machine-Learning
 # CNN vs MobileNet Efficiency Analysis
 
 이 프로젝트는 일반적인 Convolution 연산과 MobileNet의 핵심인 Depthwise Separable Convolution의 효율성을 비교 분석합니다.
@@ -12,6 +11,4 @@
 - 동일한 구조에서 연산 방식만 바꿨을 때의 Parameter 수 비교.
 - 모델별 Inference Time(추론 속도) 측정.
 - Accuracy 성능 유지 여부 확인.
-# Machine-Learning
-# Machine-Learning
-# Machine-Learning
+
