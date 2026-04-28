@@ -12,8 +12,3 @@
 - 동일한 구조에서 연산 방식만 바꿨을 때의 Parameter 수 비교.
 - 모델별 Inference Time(추론 속도) 측정.
 - Accuracy 성능 유지 여부 확인.
-# Machine-Learning
-# Machine-Learning
-# Machine-Learning
-# Machine-Learning
-# Machine-Learning
