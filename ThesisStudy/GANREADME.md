@@ -7,7 +7,7 @@ PyTorch를 활용하여 구조가 가장 직관적이고 표준적인 **Vanilla 
 ---
 
 ## 📌 핵심 구현 특징
-* **미러 서버 우회 적용**: 널리 알려진 `torchvision.datasets.MNIST` 서버 만료 및 다운로드 오류 문제를 미러링 사이트 주소(`mirrors`) 지정을 통해 우회 해결했습니다.
+* **데이터 다운로드**: 노트북은 `torchvision.datasets.MNIST(..., download=True)`를 사용합니다. 저장된 노트북 출력에는 MNIST 다운로드 실패가 남아 있으므로, 미러 서버를 통한 해결은 현재 코드로 확인되지 않았습니다.
 * **효율적인 기기 할당**: Apple Silicon(M1/M2/M3/M4) 환경에서 최적의 연산 속도를 낼 수 있도록 **MPS(Metal Performance Shaders)** 가속 장치를 지원합니다.
 * **기울기 전파 분리 (`.detach()`)**: 판별자(Discriminator)를 학습시키는 단계에서 생성기(Generator)가 만든 이미지의 연산 그래프를 끊어, 불필요한 메모리 소모와 생성기 가중치의 꼬임을 방지했습니다.
 * **차원 변형 자동화**: 데이터로더에서 나온 4D 텐서 `[B, 1, 28, 28]` 데이터를 전결합층(Linear Layer) 연산에 맞게 `view(-1, 784)`로 펼치고 다시 복원하는 과정을 구조화했습니다.
@@ -43,3 +43,8 @@ $$\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}} [\log D(x)] + \mathbb{E}_
 ### 필수 라이브러리 설치
 ```bash
 pip install torch torchvision
+```
+
+### 실행 상태
+
+The notebook contains the model and training setup, but its saved output records a dataset download failure. Rerun it in a supported environment and record the completed training configuration and sample outputs before presenting it as a reproducible result.
